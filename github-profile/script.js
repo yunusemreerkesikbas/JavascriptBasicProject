@@ -3,11 +3,21 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
-async function getUser(user) {
-    const resp = await fetch(APIURL + user);
+getUser("florinpop17")
+
+async function getUser(username) {
+    const resp = await fetch(APIURL + username);
     const respData = await resp.json();
 
     createUserCard(respData);
+
+    getRepos(username);
+}
+async function getRepos(username) {
+    const resp = await fetch(APIURL + username + 'repos');
+    const respData = await resp.json();
+    addReposToCard(respData);
+
 }
 
 function createUserCard(user) {
@@ -16,18 +26,19 @@ function createUserCard(user) {
 
     const cardHTML = `
         <div class="card">
-            <div>
-                <img class="avatar" src="${user.avatar_url}" alt="${user.name}"> />
+            <div class="img-container">
+                <img class="avatar" src="${user.avatar_url}" alt="${user.name}"> 
             </div>
-            <div>
+            <div class="user-info">
                 <h2>${user.name}</h2>
                 <p>${user.bio}</p>
                 <ul class="info">
-                    <li>${user.followers}</li>
-                    <li>${user.following}</li>
-                    <li>${user.public_repo}</li>
+                    <li>${user.followers}<strong>Takipçi</strong></li>
+                    <li>${user.following}<strong>Takip edilen</strong></li>
+                    <li>${user.public_repos}<strong>Repo</strong></li>
 
                 </ul>
+                <div id="repos"></div>
 
 
             </div>
@@ -35,6 +46,17 @@ function createUserCard(user) {
 
     `;
     main.innerHTML = cardHTML;
+}
+function addReposToCard(params) {
+    const reposEl = document.getElementById('repos');
+    repos.forEach(repo => {
+        const repoEl = document.createElement('a');
+        repoEl.classList.add('repo');
+        repoEl.href = repo.html_url;
+        repoEl.target = "_blank";
+        repoEl.innerText = repo.name;
+        reposEl.appendChild(repoEl);
+    });
 }
 
 form.addEventListener("submit", (e) =>{
