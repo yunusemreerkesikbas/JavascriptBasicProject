@@ -5,8 +5,9 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #e5e5e5;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: "Poppins", sans-serif;
@@ -14,5 +15,24 @@ body {
     min-height: 100vh;
 }
 canvas{
-    border: 1px solid #111;
+    border: 1px solid rebeccapurple;
+}
+.toolbox{
+    border: 1px solid rebeccapurple;
+    background-color: rebeccapurple;
+    display: flex;
+    padding: 1rem;
+    width: 500px;
+}
+.toolbox > *{
+    background-color: #fff;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: .25rem;
+    padding: .25rem;
+    width: 50px;
+    height: 50px;
 }
