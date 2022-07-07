@@ -43,11 +43,11 @@ input:focus{
     padding: 3rem;
     max-width: 800px;
 }
-.img-container{
+/* .img-container{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 .avatar{
     border: 10px solid #2a2a72;
     border-radius: 50%;
@@ -75,4 +75,15 @@ input:focus{
 .user-info ul strong{
     font-size: .9rem;
     margin-left: .5rem;
+}
+.repo{
+    background-color: #2a2a72;
+    display: inline-block;
+    border-radius: 5px;
+    color: white;
+    font-size: .7rem;
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    text-decoration: none;
 }
