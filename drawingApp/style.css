@@ -22,7 +22,7 @@ canvas{
     background-color: rebeccapurple;
     display: flex;
     padding: 1rem;
-    width: 500px;
+    width: 800px;
 }
 .toolbox > *{
     background-color: #fff;
@@ -35,4 +35,7 @@ canvas{
     padding: .25rem;
     width: 50px;
     height: 50px;
+}
+.toolbox > *:last-child{
+    margin-left: auto;
 }
