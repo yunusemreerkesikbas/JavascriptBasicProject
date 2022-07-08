@@ -28,7 +28,7 @@ function addWeatherToPage(data) {
     
 }
 function KtoC(K) {
-    return (K - 273.15).toFixed(2);
+    return Math.floor(K - 273.15);
 }
 
 form.addEventListener("submit", (e) => {
