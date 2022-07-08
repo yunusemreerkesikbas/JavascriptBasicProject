@@ -16,6 +16,7 @@ body {
     background-color: rgb(46, 12, 80);
     width: 400px;
     box-shadow: 0 4px 10px rgba(0,0,0i 0.5);
+    min-width: 400px;
 }
 .pw-header{
     padding: 1rem;
@@ -23,12 +24,13 @@ body {
 .pw{
     background-color: rebeccapurple;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-items: center;
     position: relative;
     height: 70px;
     width: 100%;
     padding: 1rem;
+    overflow: auto;
 }
 .pw button{
     background-color: white;
@@ -36,19 +38,18 @@ body {
     color: rgb(29, 2, 56);
     cursor: pointer;
     font-weight: bold;
-
     padding: .25rem;
     font-family: inherit;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(0, -50%);
+    transform: translate(0, 20%);
     transition: opacity .2s ease, transform .2s ease;
     opacity: 0;
 }
 .pw:hover button{
     opacity: 1;
-    transform:translate(0, -80%);
+    transform:translate(0, 0%);
 }
 .pw-body{
     padding: 0 1rem 1rem;
@@ -67,6 +68,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     padding: .75rem;
+    cursor: pointer;
     margin-top: 1rem;
     width: 100%;
 }
